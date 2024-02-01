@@ -1,0 +1,99 @@
+.body {
+  background: whitesmoke;
+}
+
+.main {
+  margin-top: 2.5%;
+}
+
+.search-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.input-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input {
+  height: 40px;
+  width: 100%;
+  padding: 10px 40px;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: 5px 5px 5px 0px rgba(56, 56, 56, 0.1);
+}
+.search-img {
+  padding-left: 10px;
+  position: absolute;
+}
+
+.search-region {
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 5px 5px 5px 0px rgba(56, 56, 56, 0.1);
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  position: absolute;
+  top: 22vh;
+  left: 75vw;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+}
+
+.dropdown-content span {
+  display: flex;
+  padding: 6px 10px;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  width: 127px;
+  height: 17px;
+}
+
+.dropdown-content span:hover {
+background-color: whitesmoke;}
+
+
+.flags-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  justify-content: center;
+  margin: 2% 5%;
+}
+
+.flags-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.card-img {
+  width: 100%;
+  height: 45%;
+}
+
+.card-body {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 15px;
+  text-align: justify;
+  background-color: white;
+  height: 61%;
+  padding: 0 10% !important;
+}
