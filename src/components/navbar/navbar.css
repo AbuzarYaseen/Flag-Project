@@ -20,3 +20,15 @@
 .dark-mood-text {
   font-weight: 600;
 }
+
+@media (max-width: 425px) {
+  h1 {
+    font-size: 100%;
+  }
+  .dark-mood-img {
+    height: 3vh;
+  }
+  .dark-mood-text {
+    font-size: 70%;
+  }
+}

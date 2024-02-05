@@ -4,6 +4,7 @@ import Navbar from "../navbar/Navbar";
 import Vector from "../../assets/Vector.svg";
 import Search from "../../assets/Search.svg";
 import "./home.css";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   //State for storing flags data
@@ -13,8 +14,8 @@ const Home = () => {
   const [searchFlag, setSearchFlag] = useState("");
   //State for displaying filtered flags
   const [filteredFlags, setFilteredFlags] = useState([]);
-  //State for filter data by region
-  const [selectedRegion, setSelectedRegion] = useState(null);
+
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
@@ -25,7 +26,7 @@ const Home = () => {
       try {
         const res = await axios.get("https://restcountries.com/v3.1/all");
         setFlags(res.data);
-        console.log("Countries: ",  res.data)
+        // console.log("Countries: ", res.data);
       } catch (error) {
         console.error("Error occurred:", error);
       }
@@ -43,10 +44,16 @@ const Home = () => {
     );
   }, [searchFlag, flags]);
 
-
-
   const handleSearchChange = (e) => {
     setSearchFlag(e.target.value);
+  };
+
+  // Function to handle card click
+  const handleCardClick = (flag) => {
+    console.log("Country Detail", flag);
+    navigate("/country-details", {
+      state: { countryDetails: flag, abc: "1231" },
+    });
   };
 
   return (
@@ -63,7 +70,7 @@ const Home = () => {
             />
           </div>
           <div className="search-region" onClick={toggleDropdown}>
-            <span>{selectedRegion || "Filter by Region"}</span>
+            <span>Filter by Region</span>
             <img
               src={Vector}
               alt="Vector icon"
@@ -72,11 +79,11 @@ const Home = () => {
           </div>
           {showDropdown && (
             <div className="dropdown-content">
-              <span onClick={() => filterByRegion("Africa")}>Africa</span>
-              <span onClick={() => filterByRegion("America")}>America</span>
-              <span onClick={() => filterByRegion("Asia")}>Asia</span>
-              <span onClick={() => filterByRegion("Europe")}>Europe</span>
-              <span onClick={() => filterByRegion("Oceania")}>Oceania</span>
+              <span>Africa</span>
+              <span>America</span>
+              <span>Asia</span>
+              <span>Europe</span>
+              <span>Oceania</span>
             </div>
           )}
         </div>
@@ -84,7 +91,13 @@ const Home = () => {
         <div className="flags-list">
           {searchFlag !== ""
             ? filteredFlags.map((flag) => (
-                <div key={flag.id} className="flags-card">
+                <div
+                  key={flag.id}
+                  className="flags-card"
+                  onClick={() => {
+                    handleCardClick(flag);
+                  }}
+                >
                   <img
                     src={flag.flags.png}
                     className="card-img"
@@ -99,7 +112,13 @@ const Home = () => {
                 </div>
               ))
             : flags.map((flag) => (
-                <div key={flag.id} className="flags-card">
+                <div
+                  key={flag.id}
+                  className="flags-card"
+                  onClick={() => {
+                    handleCardClick(flag);
+                  }}
+                >
                   <img
                     src={flag.flags.png}
                     className="card-img"

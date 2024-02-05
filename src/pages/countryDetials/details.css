@@ -1,0 +1,69 @@
+.flag-details-main {
+  margin: 5%;
+}
+
+.back-button {
+  margin-bottom: 5%;
+  padding: 1% 6%;
+  display: flex;
+  align-items: center; /* Center the content vertically */
+  position: relative;
+  width: 13%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+.back-arrow {
+  height: 20px;
+  width: 18px;
+  position: absolute;
+  left: 20%;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details img {
+  margin-right: 10%;
+  border: 1px solid #ccc;
+}
+
+.details div {
+  width: 100%;
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-row div {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 425px) {
+  .details,
+  .details-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .details img {
+    margin-right: 0;
+  }
+
+  .details-row div {
+    margin-right: 0;
+  }
+  .back-button {
+    width: 23%;
+    padding: 2% 0 2% 10%;
+  }
+  .back-arrow {
+    left: 14%;
+  }
+}
