@@ -13,10 +13,10 @@ const Navbar = () => {
       <h1 onClick={handleClick} style={{ cursor: "pointer" }}>
         Where in the world
       </h1>
-      <div className="dark-mood">
+      {/* <div className="dark-mood">
         <img src={moon} className="dark-mood-img" />
         <span className="dark-mood-text">Dark Mood</span>
-      </div>
+      </div> */}
     </div>
   );
 };
