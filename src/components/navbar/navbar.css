@@ -30,6 +30,12 @@
 }
 
 @media (max-width: 425px) {
+  .navbar {
+    padding: 5% 5%;
+  }
+}
+
+@media (max-width: 375px) {
   h1 {
     font-size: 100%;
   }

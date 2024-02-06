@@ -16,6 +16,7 @@ const Home = () => {
   const [filteredFlags, setFilteredFlags] = useState([]);
   //State for loading state
   const [isLoading, setLoading] = useState(false);
+  const [selectedRegion, setSelectedRegion] = useState(null);
 
   const navigate = useNavigate();
 
@@ -31,7 +32,7 @@ const Home = () => {
         const res = await axios.get("https://restcountries.com/v3.1/all");
         setFlags(res.data);
         setLoading(false);
-        // console.log("Countries: ", res.data);
+        console.log("Countries: ", res.data);
       } catch (error) {
         console.error("Error occurred:", error);
         setLoading(false);
@@ -44,11 +45,14 @@ const Home = () => {
     setFilteredFlags(
       flags.filter(
         (flag) =>
-          flag.name.official.toLowerCase().includes(searchFlag.toLowerCase()) ||
-          flag.region.toLowerCase().includes(searchFlag.toLowerCase())
+          flag.name.official.toLowerCase().includes(searchFlag.toLowerCase()) &&
+          (selectedRegion
+            ? flag.region.toLowerCase() === selectedRegion.toLowerCase()
+            : true),
+        console.log(selectedRegion)
       )
     );
-  }, [searchFlag, flags]);
+  }, [searchFlag, flags, selectedRegion]);
 
   const handleSearchChange = (e) => {
     setSearchFlag(e.target.value);
@@ -74,18 +78,19 @@ const Home = () => {
               onChange={handleSearchChange}
             />
           </div>
-          <div className="search-region" onClick={toggleDropdown}>
+          {/* <div className="search-region" onClick={toggleDropdown}>
             <span>Filter by Region</span>
             <img
               src={Vector}
               alt="Vector icon"
               style={{ marginLeft: "25px" }}
             />
-          </div>
+          </div> */}
           {showDropdown && (
             <div className="dropdown-content">
+              <span>All</span>
               <span>Africa</span>
-              <span>America</span>
+              <span>Americas</span>
               <span>Asia</span>
               <span>Europe</span>
               <span>Oceania</span>
@@ -96,7 +101,8 @@ const Home = () => {
           <div className="loading-container">
             <div className="spinner-border  " role="status"></div>
           </div>
-        )}        <div className="flags-list">
+        )}{" "}
+        <div className="flags-list">
           {searchFlag !== ""
             ? filteredFlags.map((flag) => (
                 <div
@@ -112,7 +118,7 @@ const Home = () => {
                     alt={flag.name.official}
                   />
                   <div className="card-body">
-                    <h4>{flag.name.official}</h4>
+                    <p>{flag.name.official}</p>
                     <p>Population: {flag.population}</p>
                     <p>Region: {flag.region}</p>
                     <p>Capital: {flag.capital}</p>
@@ -133,7 +139,9 @@ const Home = () => {
                     alt={flag.name.official}
                   />
                   <div className="card-body">
-                    <h4>{flag.name.official}</h4>
+                    <p style={{ fontSize: "14px", fontWeight: "600" }}>
+                      {flag.name.official}
+                    </p>
                     <p>Population: {flag.population}</p>
                     <p>Region: {flag.region}</p>
                     <p>Capital: {flag.capital}</p>

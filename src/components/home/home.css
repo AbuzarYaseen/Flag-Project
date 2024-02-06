@@ -37,12 +37,12 @@
 }
 
 .search-region {
-  /* background-color: white;
+  background-color: white;
   padding: 10px 20px;
   box-shadow: 5px 5px 5px 0px rgba(56, 56, 56, 0.1);
   cursor: pointer;
-  color: black; */
-  display: none;
+  color: black;
+  border-radius: 5px;
 }
 
 .dropdown-content {
@@ -88,7 +88,7 @@
 .flags-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
+  gap: 40px;
   justify-content: center;
   margin: 2% 5%;
 }
@@ -105,13 +105,14 @@
 }
 
 .card-body {
-  font-family: Inter;
+  font-family: auto;
   font-size: 13px;
   font-weight: 300;
   line-height: 15px;
   text-align: justify;
   height: 61%;
   padding: 0 10% !important;
+  margin-top: 10%;
 }
 
 @media screen and (max-width: 768px) {
@@ -127,6 +128,7 @@
   }
   .input {
     width: 86vw;
+    height: 7vh;
   }
   .search-region {
     /* margin-top: 10px;
@@ -143,5 +145,10 @@
   .dropdown-content {
     left: 7%;
     top: 27vh;
+  }
+
+  .flags-card {
+    width: 86%;
+    margin: 0 auto;
   }
 }
