@@ -77,6 +77,14 @@
   background-color: whitesmoke;
 }
 
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #008ecc;
+}
+
 .flags-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

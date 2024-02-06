@@ -14,6 +14,8 @@ const Home = () => {
   const [searchFlag, setSearchFlag] = useState("");
   //State for displaying filtered flags
   const [filteredFlags, setFilteredFlags] = useState([]);
+  //State for loading state
+  const [isLoading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -24,11 +26,15 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        // Start loading
+        setLoading(true);
         const res = await axios.get("https://restcountries.com/v3.1/all");
         setFlags(res.data);
+        setLoading(false);
         // console.log("Countries: ", res.data);
       } catch (error) {
         console.error("Error occurred:", error);
+        setLoading(false);
       }
     };
     fetchData();
@@ -86,8 +92,11 @@ const Home = () => {
             </div>
           )}
         </div>
-
-        <div className="flags-list">
+        {isLoading && (
+          <div className="loading-container">
+            <div className="spinner-border  " role="status"></div>
+          </div>
+        )}        <div className="flags-list">
           {searchFlag !== ""
             ? filteredFlags.map((flag) => (
                 <div
