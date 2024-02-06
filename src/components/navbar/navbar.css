@@ -1,11 +1,19 @@
 .navbar {
-  box-shadow: 0 0px 5px 0px rgba(56, 56, 56, 0.1);
   background: white;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.light-mode {
+  box-shadow: 0 0px 5px 0px rgba(56, 56, 56, 0.1);
+}
+
+.dark-mode {
+  box-shadow: 0 0px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .dark-mood {

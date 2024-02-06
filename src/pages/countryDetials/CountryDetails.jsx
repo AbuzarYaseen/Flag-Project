@@ -21,7 +21,6 @@ const CountryDetails = ({ flag }) => {
 
   return (
     <>
-      <Navbar />
       <div className="flag-details-main">
         <button onClick={handleClick} className="back-button">
           <img src={arrow} className="back-arrow" />

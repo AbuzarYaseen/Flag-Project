@@ -1,5 +1,9 @@
-.body {
+/* .body {
   background: whitesmoke;
+  
+} */
+.body {
+  background: var(--background-color);
 }
 
 .main {
@@ -36,6 +40,7 @@
   padding: 10px 20px;
   box-shadow: 5px 5px 5px 0px rgba(56, 56, 56, 0.1);
   cursor: pointer;
+  color: black;
 }
 
 .dropdown-content {
@@ -53,6 +58,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0 0 10px 10px;
   z-index: 1;
+  color: black;
 }
 
 .dropdown-content span {
@@ -94,7 +100,6 @@
   font-weight: 300;
   line-height: 15px;
   text-align: justify;
-  background-color: white;
   height: 61%;
   padding: 0 10% !important;
 }
@@ -114,11 +119,12 @@
     width: 86vw;
   }
   .search-region {
-    margin-top: 10px;
+    /* margin-top: 10px;
     margin-left: 0;
     width: 88%;
     display: inline-flex;
-    justify-content: space-between;
+    justify-content: space-between; */
+    display: none;
   }
   .search-region img {
     margin-right: 25px;
@@ -126,6 +132,6 @@
 
   .dropdown-content {
     left: 7%;
-    top: 20vh;
+    top: 27vh;
   }
 }

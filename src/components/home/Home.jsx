@@ -58,7 +58,6 @@ const Home = () => {
 
   return (
     <div className="body">
-      <Navbar />
       <div className="main">
         <div className="search-filter">
           <div className="input-main">
