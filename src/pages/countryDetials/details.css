@@ -3,16 +3,17 @@
 }
 
 .back-button {
-  margin-bottom: 5%;
+  margin: 7% 0 10% 0%;
   padding: 1% 6%;
   display: flex;
-  align-items: center; /* Center the content vertically */
+  align-items: center;
   position: relative;
   width: 13%;
   border-radius: 6px;
   border: 1px solid #ccc;
   background-color: white;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .back-arrow {
@@ -34,6 +35,8 @@
 
 .details div {
   width: 100%;
+  justify-content: flex-start;
+  margin-top: 8%;
 }
 
 .details-row {
@@ -53,17 +56,18 @@
   }
 
   .details img {
-    margin-right: 0;
+    margin: auto;
+    width: 100%;
   }
 
   .details-row div {
     margin-right: 0;
   }
   .back-button {
-    width: 23%;
-    padding: 2% 0 2% 10%;
+    width: 20vw;
+    padding: 0.5% 0 0.5% 10%;
   }
   .back-arrow {
-    left: 14%;
+    left: 3vw;
   }
 }
