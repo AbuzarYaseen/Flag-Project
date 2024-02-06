@@ -11,10 +11,16 @@ const App = () => {
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     if (!darkMode) {
-      document.documentElement.style.setProperty("--background-color", "#333");
+      document.documentElement.style.setProperty(
+        "--background-color",
+        "hsl(207, 26%, 17%)"
+      );
       document.documentElement.style.setProperty("--text-color", "#fff");
     } else {
-      document.documentElement.style.setProperty("--background-color", "#f0f0f0");
+      document.documentElement.style.setProperty(
+        "--background-color",
+        "#f0f0f0"
+      );
       document.documentElement.style.setProperty("--text-color", "#333");
     }
   };

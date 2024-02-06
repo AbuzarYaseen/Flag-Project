@@ -3,9 +3,24 @@
   --text-color: #333;
 }
 
-.dark {
-  --background-color: #333;
-  --text-color: #fff;
+.dark .navbar {
+  background-color: hsl(209, 23%, 22%);
+  color: #fff;
+}
+
+.dark .input {
+  background-color: hsl(209, 23%, 22%);
+  color: #fff;
+}
+
+.dark .flags-card {
+  background-color: hsl(209, 23%, 22%);
+  color: #fff;
+}
+
+.dark .back-button{
+  background-color: hsl(209, 23%, 22%);
+  color: #fff;
 }
 
 body {
