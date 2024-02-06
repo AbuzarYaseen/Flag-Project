@@ -130,6 +130,9 @@
     width: 86vw;
     height: 7vh;
   }
+  .search-filter {
+    margin-bottom: 30px;
+  }
   .search-region {
     /* margin-top: 10px;
     margin-left: 0;
