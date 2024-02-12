@@ -37,7 +37,6 @@
 .details div {
   width: 100%;
   justify-content: flex-start;
-  margin-top: 8%;
 }
 
 .details-row {
@@ -59,6 +58,10 @@
   .details img {
     margin: auto;
     width: 100%;
+  }
+
+  .details div {
+    margin-top: 8%;
   }
 
   .details-row div {
